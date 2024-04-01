@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inners Bazaar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e; /* Bright Black */
+            color: #fff; /* White text */
+        }
+        header {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .gallery {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+        .gallery-container {
+            width: 500%;
+            display: flex;
+            transition: all 1s ease;
+        }
+        .gallery-item {
+            width: 20%;
+            flex-shrink: 0;
+        }
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Inners Bazaar</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="home">
+        <h2>Welcome to Inners Bazaar</h2>
+        <p>Here you can find various services and products that we offer.</p>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Service 1</li>
+            <li>Service 2</li>
+            <li>Service 3</li>
+        </ul>
+    </section>
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="gallery">
+            <div class="gallery-container">
+                <div class="gallery-item"><img src="vh1.jpeg" alt="Product 1"></div>
+                <div class="gallery-item"><img src="vh2.jpeg" alt="Product 2"></div>
+                <div class="gallery-item"><img src="vh3.jpeg" alt="Product 3"></div>
+                <div class="gallery-item"><img src="vh4.jpeg" alt="Product 4"></div>
+                <div class="gallery-item"><img src="vh5.jpeg" alt="Product 5"></div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@example.com</p>
+        <p>Phone: 123-456-7890</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Inners Bazaar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Gallery Script
+        const galleryContainer = document.querySelector('.gallery-container');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        let currentIndex = 0;
+
+        function updateGallery() {
+            galleryContainer.style.transform = `translateX(-${currentIndex * 20}%)`;
+        }
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateGallery();
+        }, 3000);
+    </script>
+</body>
+</html>
